@@ -2,9 +2,9 @@ import React from 'react';
 import './header.css';
 
 const Header = (props)=>{
-    return (<div>
+    return (<div className='header'>
+        <div className='logo'>Woodies</div>
         { props.children }
-        <h1>Header</h1>
     </div>);
 }
 

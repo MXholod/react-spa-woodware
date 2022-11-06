@@ -1,0 +1,18 @@
+.header{
+    height: 5rem;
+    border:1px solid #000;
+    display:flex;
+    justify-content: space-between;
+}
+.header .logo{
+    width: 193px;
+    height: 33px;
+    margin: 23px 0 0 80px;
+    font-family: var(--font-navbarNunito);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding-left: 7px;
+    border:1px solid #000;
+}
