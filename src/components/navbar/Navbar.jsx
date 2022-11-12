@@ -10,6 +10,12 @@ const Navbar = ()=>{
             <li><a href="#">How it works</a></li>
             <li><a href="#">Categories</a></li>
             <li><a href="#">Testimony</a></li>
+            <li>
+                <ul>
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#">Sign in</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>);
 }
