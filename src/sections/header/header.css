@@ -14,5 +14,19 @@
     text-transform: uppercase;
     letter-spacing: 10px;
     padding-left: 7px;
-    border:1px solid #000;
+    /*border:1px solid #000;*/
+    position: relative;
+}
+.header .logo img{
+    height: inherit;
+    width: calc(193px / 6);
+    position: absolute;
+    top:0;
+    left: calc((193px / 6) * -1);
+    transform: rotate(0deg);
+    animation: flower 7s linear 1s infinite normal both running;
+}
+@keyframes flower{
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg); }
 }
