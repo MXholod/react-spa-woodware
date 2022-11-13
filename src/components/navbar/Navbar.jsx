@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import NavMenu from './../nav-menu/NavMenu';
 import './navbar.css';
-import { AiOutlineHome } from 'react-icons/ai';
+import { RiCloseLine, RiMenu3Line } from 'react-icons/ri';
 
 const Navbar = ()=>{
+    const [toggleMenu, setToggleMenu] = useState(false);
+    const switcMenu = ()=>{
+        setToggleMenu(s=>!s);
+        console.log(toggleMenu);
+    }
     return (<nav className="navbar">
-        <ul>
-            <li><AiOutlineHome /><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">How it works</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Testimony</a></li>
-            <li>
-                <ul>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Sign in</a></li>
-                </ul>
-            </li>
-        </ul>
+        <NavMenu />
+        <div className="navbar__sandwich-menu">
+            { toggleMenu ? 
+                <RiCloseLine color="#000" size={27} onClick={ switcMenu } />
+                : <RiMenu3Line color="#000" size={27} onClick={ switcMenu } />
+            }
+            { toggleMenu && ( <NavMenu />) }
+        </div>
     </nav>);
 }
 
