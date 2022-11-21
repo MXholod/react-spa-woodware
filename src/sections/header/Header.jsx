@@ -3,12 +3,12 @@ import './header.css';
 import logo from './../../assets/Logo.png';
 
 const Header = (props)=>{
-    return (<div className='header'>
+    return (<header className='header'>
         <div className='logo'><img src={logo} alt="logo" />
             Woodies
         </div>
         { props.children }
-    </div>);
+    </header>);
 }
 
 export default Header;
