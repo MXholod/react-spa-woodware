@@ -22,6 +22,7 @@
 .nav-menu li ul li button{
     border:none;
     padding: 4px 4px;
+    background-color: transparent;
 }
 .nav-menu li ul li button:hover,.nav-menu li ul li button:active {
     cursor: pointer;
