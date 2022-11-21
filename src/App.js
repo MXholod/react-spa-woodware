@@ -5,17 +5,15 @@ import { Navbar } from './components';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Header>
-          <Navbar />
-        </Header>
-        <Main />
-        <AboutUs />
-        <HowItWorks />
-        <Categories />
-        <Testimony />
-        <Footer />
-      </header>
+      <Header>
+        <Navbar />
+      </Header>
+      <Main />
+      <AboutUs />
+      <HowItWorks />
+      <Categories />
+      <Testimony />
+      <Footer />
     </div>
   );
 }
