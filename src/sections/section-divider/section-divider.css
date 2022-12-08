@@ -1,0 +1,26 @@
+.section-divider{
+    height: 10vh;
+    padding: 3% 4% 4% 4%;
+    margin: 3% 0;
+    display:flex;
+    justify-content: center;
+}
+.section-divider img{
+    height: 25px;
+    width: 25px;
+    margin-right:3%;
+    animation: flower-divider 7s linear 1s infinite normal both running;
+}
+@keyframes flower-divider{
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg); }
+}
+.section-divider span{
+    font-size: 2vw;
+    margin-top: -0.5%;
+    font-weight: 500;
+}
+.section-divider .section-divider__dash{
+    width: 20vw;
+    transform: scaleX(8);
+}
