@@ -1,5 +1,5 @@
 import './App.css';
-import { Header, Main, AboutUs, HowItWorks, Categories, Testimony, Footer } from './sections';
+import { Header, Main, AboutUs, HowItWorks, Categories, Testimony, Footer, Divider } from './sections';
 import { Navbar } from './components';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
         <Navbar />
       </Header>
       <Main />
+      <Divider sectionDescription="Who we are" sectionNameBelow="About us" />
       <AboutUs />
       <HowItWorks />
       <Categories />
