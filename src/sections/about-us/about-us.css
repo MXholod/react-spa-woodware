@@ -1,0 +1,88 @@
+.about-us{
+    height: 100vh;
+}
+.about-us__cell{
+    margin:0 0 0 10%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-us__cell > div{
+    flex-basis: 50%;
+    height:50%;
+}
+.about-us__cell > div:nth-of-type(1){
+    background: transparent url('./../../assets/s_about-us_bowls.png') top left/auto 100% no-repeat;
+}
+/*Text 1*/
+.about-us__cell > div:nth-of-type(2) p:first-child span{
+    font-weight: bold;
+}
+.about-us__cell > div:nth-of-type(2) p:first-child{
+    margin-top: 15%;
+    font-size: 2.5vw;
+    padding: 0 10%;
+    letter-spacing: 1px;
+}
+.about-us__cell > div:nth-of-type(2) p:last-child{
+    margin-top: 2%;
+    font-size: 1.7vw;
+    font-weight: 500;
+    padding: 0 20% 0 10%;
+}
+.about-us__cell > div:nth-of-type(2) p{
+    font-family: var(--font-navbarNunito);
+}
+/*Text 1 end*/
+/*Text 2*/
+.about-us__cell > div:nth-of-type(3){
+    flex-basis: 75%;
+}
+.about-us__cell > div:nth-of-type(3) p:first-child{
+    margin-top: 10%;
+    font-family: var(--font-navbarNunito);
+    font-size: 2.5vw;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.about-us__cell > div:nth-of-type(3) p:first-child span{
+    margin-top: 2%;
+    font-family: var(--font-navbarNunito);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.about-us__cell > div:nth-of-type(3) p:last-child{
+    margin-top: 1%;
+    font-size: 1.7vw;
+    font-weight: 400;
+    padding: 0 25% 0 0%;
+}
+/*Text 2 end*/
+.about-us__cell > div:nth-last-of-type(1){
+    flex-basis: 25%;
+    background: transparent url('./../../assets/s_about-us_spoons.png') top right/auto 100% no-repeat;
+}
+
+@media screen and (max-width: 801px){
+    .about-us__cell{
+        margin:0 0 0 10%;
+        height: 100vh;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .about-us__cell > div{
+        flex-basis: 20%;
+        width:100%;
+    }
+    .about-us__cell > div:first-child{
+        flex-basis: 25%;
+    }
+    .about-us__cell > div:nth-of-type(3){
+        flex-basis: 20%;
+        width:100%;
+    }
+    .about-us__cell > div:nth-last-of-type(1){
+        flex-basis: 25%;
+        width:100%;
+    }      
+}
