@@ -11,6 +11,7 @@ function App() {
       <Main />
       <Divider sectionDescription="Who we are" sectionNameBelow="About us" />
       <AboutUs />
+      <Divider sectionDescription="How to custom" sectionNameBelow="How it works" />
       <HowItWorks />
       <Categories />
       <Testimony />
