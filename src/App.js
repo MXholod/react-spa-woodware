@@ -13,6 +13,7 @@ function App() {
       <AboutUs />
       <Divider sectionDescription="How to custom" sectionNameBelow="How it works" />
       <HowItWorks />
+      <Divider sectionDescription="What we have" sectionNameBelow="Categories" />
       <Categories />
       <Testimony />
       <Footer />
