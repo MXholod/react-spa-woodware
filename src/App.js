@@ -15,6 +15,7 @@ function App() {
       <HowItWorks />
       <Divider sectionDescription="What we have" sectionNameBelow="Categories" />
       <Categories />
+      <Divider sectionDescription="What they say" sectionNameBelow="Testimony" />
       <Testimony />
       <Footer />
     </div>
