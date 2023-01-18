@@ -1,0 +1,61 @@
+.categories{
+    height: 100vh;
+}
+
+.categories__block{
+    margin:0 10% 0 10%;
+    height: 100vh;
+}
+.categories__items{
+    height: 100vh;
+    list-style-type: none;
+    display:flex;
+    flex-wrap: wrap;
+    align-content:space-between;
+}
+.categories__item{
+    flex-basis: 28%;
+    height: 45%;
+    margin-right: 8%;
+    display:flex;
+    flex-direction: column;
+}
+.categories__title{
+    font-family: var(--font-navbarNunito);
+    font-weight: bold;
+    font-size: 1.5vw;
+    height: 20%;
+    padding: 3% 15% 0%;
+}
+.categories__image{
+    width:130px;
+    height:180px;
+}
+.categories__image img{
+    width:auto;
+    height: auto;
+}
+.categories__button{
+    width: 40%;
+    height: 12%;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid #000;
+    font-family: var(--font-navbarNunito);
+    margin-left: 45%;
+    transition: background-color 1s ease;
+}
+.categories__button:hover, .categories__button:active{
+    cursor:pointer;
+    background-color: rgba(222, 218, 218, .5);
+}
+.categories__item:nth-of-type(3n + 1){
+    background: url('./../../assets/s_categories_furniture.png') -5% 0px/280% 100% no-repeat;
+}
+.categories__item:nth-of-type(3n + 2){
+    background: url('./../../assets/s_categories_furniture.png') 50% 0px/280% 100% no-repeat;
+}
+.categories__item:nth-of-type(3n + 3){
+    background: url('./../../assets/s_categories_furniture.png') 105% 0px/280% 100% no-repeat;
+    margin-right: 0%;
+}
