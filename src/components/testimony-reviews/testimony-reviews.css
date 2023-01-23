@@ -1,0 +1,24 @@
+.testimony-reviews{
+    position: relative;
+    height: 40vh;
+    background: url('./../../assets/s_border_testimony_reviews.png') 0 0/100% 100% no-repeat;
+}
+.testimony-reviews__rating{
+    padding: 10% 5% 0;
+    height:20%;
+    display:flex;
+}
+.testimony-reviews__star{
+    padding:3%;
+    background: url('./../../assets/star.png') 0 0/100% 100% no-repeat;
+}
+.testimony-reviews__comment{
+    font-family: var(--font-navbarNunito);
+    font-size: 14px;
+    height: 55%;
+    padding: 5% 5% 0;
+}
+.testimony-reviews__author{
+    height: 10%;
+    padding: 0 5% 0;
+}
