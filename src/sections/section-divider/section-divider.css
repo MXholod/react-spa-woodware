@@ -22,5 +22,5 @@
 }
 .section-divider .section-divider__dash{
     width: 20vw;
-    transform: scaleX(8);
+    transform: scaleX(4);
 }
