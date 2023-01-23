@@ -1,0 +1,26 @@
+.loader{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader:before{
+    content: '';
+    position: relative;
+    display: block;
+    width: 10%;
+    height: 15%;
+    border-radius: 50%;
+    background-color: #db9fa9;
+    animation: loader 2s ease-in-out .5s infinite;
+}
+
+@keyframes loader{
+    0%{ width: 10%; height: 15%; }
+    50%{ width: 15%; height: 20%; }
+    100%{ width: 10%; height: 15%; }
+}
