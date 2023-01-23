@@ -1,0 +1,22 @@
+.testimony{
+    height: 50vh;
+}
+.testimony__block{
+    margin:0 10% 0 10%;
+    height: 100%;
+    display:flex;
+}
+.testimony__images{
+    flex-basis: 55%;
+    display: flex;
+}
+.testimony__images div{
+    margin-right: 5%;
+}
+.testimony__images div img{
+    width: 100%;
+    height: 100%;
+}
+.testimony__reviews{
+    flex-basis: 45%;
+}
