@@ -1,0 +1,107 @@
+.footer{
+    height: 56vh;
+    margin:5% 0 0 10%;
+    display: grid;
+    grid-template-rows: 1fr 2fr auto;
+    grid-template-columns: 1fr 1fr;
+    background: url('./../../assets/s_footer_chair.png') bottom right/40% auto no-repeat;
+}
+.footer__subscribe-text{
+    font-family: var(--font-navbarNunito);
+    font-size: 1.1vw;
+    padding: 10% 17% 0 0;
+}
+.footer__subscribe-field{
+    padding: 10% 0;
+}
+.footer__subscribe-field input[type='email']{
+    border: 1px solid #DAA520;
+    padding: 2%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 55%;
+    color: #AFAFAF;
+}
+.footer__subscribe-field input[type='email']:focus{
+    border: 1px solid #DAA520;
+    outline: none;
+}
+.footer__subscribe-field input[type='button']{
+    width:20%;
+    background-color: #DAA520;
+    color: #fff;
+    padding: 2%;
+    border:1px solid #DAA520;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.footer__subscribe-field input[type='button']:hover{
+    cursor:pointer;
+}
+.footer__lists{
+    background: url('./../../assets/s_footer_line.png') top left/110% 1% no-repeat;
+    grid-column-start:1;
+    grid-column-end:3;
+    padding-top: 1%;
+    display:flex;
+    justify-content: space-between;
+    margin-right: 35%;
+}
+.footer__lists ul{
+    list-style-type: none;
+    font-family: var(--font-navbarNunito);
+    display: flex;
+    flex-direction: column;
+}
+.footer__lists ul li{
+    margin-top: 20%;
+    font-size: .8em;
+    color:#8D8D8D;
+}
+.footer__lists ul li:first-child{
+    margin-top: 0;
+    font-size: .9em;
+    color:#333;
+    font-weight: bold;
+}
+.footer__info{
+    font-family: var(--font-navbarNunito);
+}
+.footer__info .footer__brand{
+    color:#3E3F43;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.footer__info .footer__brand img{
+    height: 25px;
+    width: 25px;
+    float:left;
+    margin-right: .5em;
+    animation: flower 7s linear 1s infinite normal both running;
+}
+@keyframes flower{
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg); }
+}
+.footer__info .footer__brand span{
+    text-transform:uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+.footer__info .footer__contacts{
+    display:flex;
+    flex-direction: column;
+}
+.footer__info .footer__contacts span{
+    color:#8D8D8D;
+    font-size: .8vw;
+    margin-top:10%;
+}
+.footer__date{
+    font-family: var(--font-navbarNunito);
+    text-align: center;
+    color: #8D8D8D;
+    font-size: 1vw;
+    grid-column-start:1;
+    grid-column-end:3;
+}
