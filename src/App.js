@@ -9,13 +9,13 @@ function App() {
         <Navbar />
       </Header>
       <Main />
-      <Divider sectionDescription="Who we are" sectionNameBelow="About us" />
+      <Divider id="aboutus" sectionDescription="Who we are" sectionNameBelow="About us" />
       <AboutUs />
-      <Divider sectionDescription="How to custom" sectionNameBelow="How it works" />
+      <Divider id="howitworks" sectionDescription="How to custom" sectionNameBelow="How it works" />
       <HowItWorks />
-      <Divider sectionDescription="What we have" sectionNameBelow="Categories" />
+      <Divider id="categories" sectionDescription="What we have" sectionNameBelow="Categories" />
       <Categories />
-      <Divider sectionDescription="What they say" sectionNameBelow="Testimony" />
+      <Divider id="testimony" sectionDescription="What they say" sectionNameBelow="Testimony" />
       <Testimony />
       <Footer />
     </div>
