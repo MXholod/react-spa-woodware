@@ -1,10 +1,14 @@
 import './App.css';
 import { Header, Main, AboutUs, HowItWorks, Categories, Testimony, Footer, Divider } from './sections';
 import { Navbar } from './components';
+import { useScroll } from './hooks/useScroll';
+import MoveToHomeButton from './components/move-to-home-button/MoveToHomeButton';
 
 function App() {
+  const scroll = useScroll();
   return (
     <div className="App">
+      { scroll ? <MoveToHomeButton /> : null }
       <Header>
         <Navbar />
       </Header>
