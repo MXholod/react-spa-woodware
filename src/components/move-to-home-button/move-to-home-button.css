@@ -1,0 +1,32 @@
+.move-home-button{
+    font-size:1.2vw;
+    font-weight: bold;
+    display:block;
+    width: 5vw;
+    height: 5vw;
+    border:1px solid #d208cb;
+    background-color: #f69df3;
+    color: #000;
+    position: fixed;
+    bottom: 4.5%;
+    right: 4.5%;
+    border-radius:50%;
+    transition: background-color 2s, color 2s;
+    animation: HomeButton 3s linear 1s infinite normal both running;
+}
+.move-home-button:hover, .move-home-button:active{
+    cursor:pointer;
+    color:#fff;
+    background-color: #d17ace;
+}
+@keyframes HomeButton{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
