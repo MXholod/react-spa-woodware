@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import './nav-menu.css';
 import { handleNavMenu } from './../../utils/handle-menu-buttom';
+import { ApplicationContext } from '../../context/appContext';
 
 const NavMenu = ()=>{
+    const appCtx = useContext(ApplicationContext);
+
+    const handleSignUp = ()=>{
+        appCtx.setToggleSignUp(true);
+    }
+    const handleSignIn = ()=>{
+        appCtx.setToggleSignIn(true);
+    }
+
     return (<>
         <ul className="nav-menu">
             <li><AiOutlineHome />
@@ -23,8 +33,8 @@ const NavMenu = ()=>{
             </li>
             <li>
                 <ul>
-                    <li><button>Sign up</button></li>
-                    <li><button>Sign in</button></li>
+                    <li><button onClick={ handleSignUp }>Sign up</button></li>
+                    <li><button onClick={ handleSignIn }>Sign in</button></li>
                 </ul>
             </li>
         </ul>
