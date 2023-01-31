@@ -1,13 +1,20 @@
+import { useContext } from 'react';
 import './App.css';
 import { Header, Main, AboutUs, HowItWorks, Categories, Testimony, Footer, Divider } from './sections';
 import { Navbar } from './components';
 import { useScroll } from './hooks/useScroll';
 import MoveToHomeButton from './components/move-to-home-button/MoveToHomeButton';
+import SignUpForm from './components/signUpForm/SignUpForm';
+import SignInForm from './components/signInForm/SignInForm';
+import { ApplicationContext } from './context/appContext';
 
 function App() {
+  const appCtx = useContext(ApplicationContext);
   const scroll = useScroll();
   return (
     <div className="App">
+      { appCtx.toggleSignUp ? <SignUpForm /> : null }
+      { appCtx.toggleSignIn ? <SignInForm /> : null }
       { scroll ? <MoveToHomeButton /> : null }
       <Header>
         <Navbar />
