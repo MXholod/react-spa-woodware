@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
-import { useEnhancedReducer } from './../../hooks/useEnhancedReducer';
+import React, { useEffect, useContext } from 'react';
+import { ApplicationContext } from '../../context/appContext';
 import { authUser, compareToSignIn } from './../../services/authService'; 
 
 const withQuerySign = (Component)=>{
     return (props)=>{
-        const { state, dispatch } = useEnhancedReducer();
+        const appCtx = useContext(ApplicationContext);
+        const { state, dispatch } = appCtx;
         useEffect(()=>{
             //Save into Service
             authUser(function(userData){
@@ -27,13 +28,21 @@ const withQuerySign = (Component)=>{
             if(key === 'signUp'){
                 dispatch({ type, [key]: data });
             }else{// 'signIn'
-                if(compareToSignIn(data)){// User in DB - 'authService'
-                    //console.log(key," ",data);
+                const userData = JSON.parse(window.localStorage.getItem('appState'));
+                let login = '', password = '';
+                if(userData !== null){
+                    login  = userData.signUp.login;    
+                    password  = userData.signUp.password;    
+                }
+                // User in DB - 'authService'
+                if(compareToSignIn(data) || (login !== '' && password !== '')){
                     dispatch({ type, [key]: data });
                 }else{
                     console.log("User hasn't signed up!");
+                    return false;
                 }
             }
+            return true;
         }
 
         return (<>
