@@ -1,14 +1,21 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './signUpForm.css';
 import { ApplicationContext } from '../../context/appContext';
 
-const SignUpForm = ()=>{
+const SignUpForm = (props)=>{
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [passConfirmed, setPassConfirmed] = useState('');
     const [email, setEmail] = useState('');
     const [incorrect, setIncorrect] = useState(false);
     const appCtx = useContext(ApplicationContext);
+
+    useEffect(()=>{
+        if(props.state.signUp.login !== '' && props.state.signUp.password !== ''){
+            //Close dialog window
+            appCtx.setToggleSignUp(false);
+        }
+    },[props.state.signUp, appCtx]);
 
     const handleLogin = (e)=>{
         if(e.target.value.length >= 0){
@@ -55,6 +62,9 @@ const SignUpForm = ()=>{
         if(i === 4){
             //Pass data to the reducer
             setIncorrect(false);
+            const signUp = { login: login, password: password, email: email };
+            //dispatch({type:'signup', signUp});
+            props.toReducer('signup', signUp);
         }else{
             //Entered data is incorrect
             setIncorrect(true);
