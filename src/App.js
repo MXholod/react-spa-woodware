@@ -4,17 +4,24 @@ import { Header, Main, AboutUs, HowItWorks, Categories, Testimony, Footer, Divid
 import { Navbar } from './components';
 import { useScroll } from './hooks/useScroll';
 import MoveToHomeButton from './components/move-to-home-button/MoveToHomeButton';
-import SignUpForm from './components/signUpForm/SignUpForm';
-import SignInForm from './components/signInForm/SignInForm';
+import SignUpForm from './components/signUp-form/SignUpForm';
+import SignInForm from './components/signIn-form/SignInForm';
 import { ApplicationContext } from './context/appContext';
+import WithQuerySign from './hoc/withQuerySign/WithQuerySign.js';
+//Autentication information
+import AuthUser from "./components/auth-user/AuthUser";
+//HOCs
+const WithSignUpQuery =  WithQuerySign(SignUpForm);
+const WithSignInQuery =  WithQuerySign(SignInForm);
 
 function App() {
   const appCtx = useContext(ApplicationContext);
   const scroll = useScroll();
   return (
     <div className="App">
-      { appCtx.toggleSignUp ? <SignUpForm /> : null }
-      { appCtx.toggleSignIn ? <SignInForm /> : null }
+      { appCtx.toggleAuth ? <AuthUser /> : null }
+      { appCtx.toggleSignUp ? <WithSignUpQuery auth={'signup'} /> : null }
+      { appCtx.toggleSignIn ? <WithSignInQuery auth={'signin'} /> : null }
       { scroll ? <MoveToHomeButton /> : null }
       <Header>
         <Navbar />
