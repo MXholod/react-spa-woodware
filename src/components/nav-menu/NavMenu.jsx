@@ -4,6 +4,7 @@ import './nav-menu.css';
 import { handleNavMenu } from './../../utils/handle-menu-buttom';
 import { ApplicationContext } from '../../context/appContext';
 import { isAuth } from './../../utils/check-auth-in-service';
+import { logout } from './../../utils/logout-from-service';
 
 const NavMenu = ()=>{
     const appCtx = useContext(ApplicationContext);
@@ -24,7 +25,14 @@ const NavMenu = ()=>{
     }
     
     const handleUserLogOut = ()=>{
-        dispatch({ type: "logout" });
+        logout(state.signUp.login, state.signUp.password).then((data)=>{
+            //If a user is cleared in the Service
+            if(data){
+                dispatch({ type: "logout" });
+            }else{
+                console.log("User cant't be logout");
+            }
+        });
     }
 
     useEffect(()=>{
