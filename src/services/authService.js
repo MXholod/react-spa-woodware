@@ -1,7 +1,7 @@
 let userAuth = {
     'signUp': { login: '', password: '', email: '' },
     'signIn': { login: '', password: '' },
-    'subscribeEmail': ''
+    'subscribeEmail': []
 }
 
 export function authUser(cb){
@@ -34,4 +34,11 @@ export function compareToSignIn(userData){
         return true;
     }
     return false;
+}
+
+export function subscribe(email){
+    //Create copy of emails
+    const emails = userAuth.subscribeEmail.concat();
+    emails.push(email);
+    userAuth = { ...userAuth, subscribeEmail: emails };
 }
