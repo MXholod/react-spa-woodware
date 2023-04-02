@@ -36,6 +36,18 @@ export function compareToSignIn(userData){
     return false;
 }
 
+export function userLogout(login, password){
+    if(userAuth.signUp.login === login && userAuth.signUp.password === password){
+        userAuth = {
+            'signUp': { login: '', password: '', email: '' },
+            'signIn': { login: '', password: '' },
+            'subscribeEmail': []
+        }
+        return true;
+    }
+    return false;
+}
+
 export function subscribe(email){
     //Create copy of emails
     const emails = userAuth.subscribeEmail.concat();
