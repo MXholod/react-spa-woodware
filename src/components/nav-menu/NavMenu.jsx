@@ -9,6 +9,8 @@ const NavMenu = ()=>{
     const appCtx = useContext(ApplicationContext);
     const { state, dispatch } = appCtx;
     const [isAuthed, setIsAuthed] = useState(false);
+    const [disable, setDisable] = useState(false);
+    const [classes, setClasses] = useState([' hi ']);
 
     const handleSignUp = ()=>{
         appCtx.setToggleSignUp(true);
@@ -21,6 +23,10 @@ const NavMenu = ()=>{
         appCtx.setToggleAuth(true);
     }
     
+    const handleUserLogOut = ()=>{
+        dispatch({ type: "logout" });
+    }
+
     useEffect(()=>{
         const { login: lsUp, password: psUp } = state.signUp;
         const { login: lsIn, password: psIn } = state.signIn;
@@ -28,18 +34,25 @@ const NavMenu = ()=>{
         if(JSON.parse(window.localStorage.getItem('appState')) !== null){
             //It just simulates the Sign up process
             if((lsUp !== '' && psUp !== '') && (lsIn === '' && psIn === '')){
+                setDisable(true);
+                setClasses((s)=>[...s, 'nav-menu__button_disabled']);
                 const fetchData = async ()=>{
                     const auth = await isAuth(lsUp, psUp);
                     setIsAuthed(auth); //true or false
+                    setDisable(false);
+                    setClasses((s)=> s.filter(el => el !== 'nav-menu__button_disabled'));
                 }
                 fetchData().catch(console.error);
             }
             //It just simulates the Sign in process
             if(lsIn !== '' && psIn !== ''){
-                setIsAuthed(true); //true or false
+                setIsAuthed(true);
+            }
+            //Logout the user
+            if(lsIn === '' && psIn === ''){
+                setIsAuthed(false);
             }
         }
-        
     },[state.signUp, state.signIn]);
     
 
@@ -64,11 +77,26 @@ const NavMenu = ()=>{
                 { isAuthed ? 
                 <ul>
                     <li><button onClick={ handleUserAuth }>User details</button></li>
-                    <li><button onClick={ ()=>console.log('Log out') }>Log out</button></li>
+                    <li><button onClick={ handleUserLogOut }>Log out</button></li>
                 </ul> :
                 <ul>
-                    <li><button onClick={ handleSignUp }>Sign up</button></li>
-                    <li><button onClick={ handleSignIn }>Sign in</button></li>
+                    <li>
+                        <button className={ classes.join(' ') }
+                            onClick={ handleSignUp }
+                            disabled={ disable }
+                            >
+                                Sign up
+                        </button>
+                    </li>
+                    <li>
+                        <button 
+                            className={ classes.join(' ') }
+                            onClick={ handleSignIn }
+                            disabled={ disable }
+                            >
+                                Sign in
+                        </button>
+                    </li>
                 </ul> }
             </li>
         </ul>

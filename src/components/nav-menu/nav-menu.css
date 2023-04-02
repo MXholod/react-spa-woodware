@@ -23,9 +23,19 @@
     border:none;
     padding: 4px 4px;
     background-color: transparent;
+    display: block;
+    width:100%;
 }
 .nav-menu li ul li button:hover,.nav-menu li ul li button:active {
     cursor: pointer;
+}
+.nav-menu li ul li .nav-menu__button_disabled{
+    background-color: #eeebe4;
+    color: #dad0b9;
+}
+.nav-menu li ul li .nav-menu__button_disabled:hover, .nav-menu li ul li .nav-menu__button_disabled:active{
+    cursor: default;
+    background-color: #eeebe4;
 }
 .nav-menu li ul li:first-child{
     margin-bottom: 2px;
