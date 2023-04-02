@@ -1,10 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './auth-user.css';
 import { ApplicationContext } from '../../context/appContext';
+import { getAuth } from './../../services/authService';
 
 const AuthUser = (props)=>{
+    const [subscribers, setSubscribers] = useState('');
     const appCtx = useContext(ApplicationContext);
     const { signUp: { login, password, email }, subscribeEmail } = appCtx.state;
+
+    useEffect(()=>{
+        const timer = setTimeout(()=>{
+            const { subscribeEmail } = getAuth();
+            setSubscribers(subscribeEmail.join(' - '));
+        },2000);
+        return ()=>{
+            clearTimeout(timer);
+        }
+    },[]);
 
     const handleUserAuth = (e)=>{
         if(e.target.getAttribute("class") === "auth-user"){
@@ -25,6 +37,8 @@ const AuthUser = (props)=>{
                 checked={ subscribeEmail === '' ? false : true }
             />
         </label>
+        { subscribers !== '' ? (<div><h3>All subscribers</h3>
+        <p>{subscribers}</p></div>) : null }
         </div>
     </div>);
 }
