@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './footer.css';
 import logo from './../../assets/Logo.png';
+import { ApplicationContext } from '../../context/appContext';
+import { subscribe, getAuth } from './../../services/authService';
 
 const Footer = ()=>{
     const [value, setValue] = useState('');
+    const appCtx = useContext(ApplicationContext);
+    const { state, dispatch } = appCtx;
+    
+    useEffect(()=>{
+        const timeer = setTimeout(()=>{
+            const { signUp: { login, password } } = getAuth();
+            if(value !== '' && login !== '' &&  password !== ''){
+                subscribe(value);
+                alert('You\'ve subscribed, see your email in the user panel');
+                setValue('');
+            }else if(value !== ''){
+                alert('You\'ve successfully subscribed');
+                setValue('');
+            }
+        },3000);
+        return ()=>{
+            clearTimeout(timeer);
+        }
+    },[state.subscribeEmail]);
+
     const handleInput = (e)=>{
         setValue(s => e.target.value);
     }
@@ -16,7 +38,7 @@ const Footer = ()=>{
         if(value.search(reg) === -1){
             alert('Email format is incorrect!');
         }else{
-            alert('You\'ve successfullt subscribed');
+            dispatch({ type: 'subscribe', data: value });
         }
     }
 
