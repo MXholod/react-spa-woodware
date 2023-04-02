@@ -76,7 +76,6 @@
     width:80%;
     list-style-type:none;
     font-size:.8em;
-    
     overflow-y:auto;
     border: 3px solid #DAA520;
 }
@@ -86,4 +85,97 @@
 }
 .main__furniture li:last-child{
     border-bottom: none;
+}
+
+@media screen and (max-width: 960px){
+    .main{
+        margin-top:-5rem;
+        max-height: 650px;
+        min-height: 650px;
+    }
+    .main::after{
+        width: 28%;
+        height: 650px;
+    }
+    .main__text{
+        width:37.5%; 
+        height:46vh;
+        margin:165px 0 0 10%;
+        font-size: 2.1vw;
+    }
+    .main__text div{
+        font-size: 5vw;
+        line-height: 115%;
+        padding-top: 3%;
+    }
+    .main__button{
+        margin-top:5%;
+        padding:3% 6%;
+        border-radius: 5px;
+        font-size: 1vw;
+    }
+    .main__image{
+        width: 42%;
+        height:61vh;
+        margin-top:165px;
+        margin-left:10%;
+    }
+    .main__furniture{
+        top:0;
+        left:-5px;
+        right:0;
+        bottom:55%;
+        padding:5px;
+        width:80%;
+        font-size:.8em;
+    }
+    .main__furniture li{
+        padding: 2px 4px;
+    }
+}
+@media screen and (max-width: 640px){
+    .main{
+        margin-top:-5rem;
+        max-height: 450px;
+        min-height: 450px;
+    }
+    .main::after{
+        width: 28%;
+        height: 450px;
+    }
+    .main__text{
+        width:37.5%; 
+        height:46vh;
+        margin:130px 0 0 10%;
+        font-size: 2.1vw;
+    }
+    .main__text div{
+        font-size: 5vw;
+        line-height: 115%;
+        padding-top: 3%;
+    }
+    .main__button{
+        margin-top:5%;
+        padding:3% 6%;
+        border-radius: 5px;
+        font-size: 1vw;
+    }
+    .main__image{
+        width: 42%;
+        height:50vh;
+        margin-top:110px;
+        margin-left:10%;
+    }
+    .main__furniture{
+        top:0;
+        left:-5px;
+        right:0;
+        bottom:65%;
+        padding:5px;
+        width:80%;
+        font-size:.8em;
+    }
+    .main__furniture li{
+        padding: 2px 4px;
+    }
 }
