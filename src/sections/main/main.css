@@ -26,6 +26,7 @@
     font-family: var(--font-navbarNunito);
     font-size: 2.1vw;
     letter-spacing: 1px;
+    position: relative;
 }
 .main__text div{
     font-size: 5vw;
@@ -42,9 +43,16 @@
     border-radius: 5px;
     font-size: 1vw;
 }
+.main__button_disabled{
+    background-color: #dad0b9;
+}
 .main__button:hover, .main__button:active{
     cursor: pointer;
     background-color: #cba441;
+}
+.main__button_disabled:hover, .main__button_disabled:active{
+    cursor: default;
+    background-color: #dad0b9;;
 }
 .main__image{
     width: 42%; /*568px;*/
@@ -56,4 +64,26 @@
     background-size: 100%;
     float:left;
     margin-left:10%;
+}
+.main__furniture{
+    position: absolute;
+    top:0;
+    left:-5px;
+    right:0;
+    bottom:30%;
+    padding:5px;
+    background-color:#f9bdbd;
+    width:80%;
+    list-style-type:none;
+    font-size:.8em;
+    
+    overflow-y:auto;
+    border: 3px solid #DAA520;
+}
+.main__furniture li{
+    padding: 2px 4px;
+    border-bottom: 1px solid #DAA520;
+}
+.main__furniture li:last-child{
+    border-bottom: none;
 }
