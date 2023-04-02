@@ -24,6 +24,14 @@ export const useEnhancedReducer = ()=>{
                 newState = Object.assign({}, state, data);
                 window.localStorage.setItem('appState', JSON.stringify(newState));
                 return newState;
+            case 'logout' : 
+                newState = {
+                    'signUp': { login: '', password: '', email: '' },
+                    'signIn': { login: '', password: '' },
+                    'subscribeEmail': ''
+                }
+                window.localStorage.setItem('appState', JSON.stringify(newState));
+                return newState;
             case 'subscribe' : 
                 newState = { ...state, subscribeEmail: action.data };
                 window.localStorage.setItem('appState', JSON.stringify(newState));
