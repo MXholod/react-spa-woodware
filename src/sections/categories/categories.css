@@ -59,3 +59,37 @@
     background: url('./../../assets/s_categories_furniture.png') 105% 0px/280% 100% no-repeat;
     margin-right: 0%;
 }
+@media screen and (max-width: 960px){
+    .categories__image img{
+        max-width:100%;
+        height: auto;
+    }
+    .categories__button{
+        width: 42%;
+        font-size: 0.6em;
+    }
+}
+@media screen and (max-width: 640px){
+    .categories{
+        height: 80vh;
+    }
+    .categories__items{
+        height: 70vh;
+    }
+    .categories__item{
+        flex-basis: 25%;
+        flex-grow: 1;
+    }
+    .categories__image{
+        width:85px;
+        height:120px;
+    }
+    .categories__image img{
+        max-width:80%;
+        height: auto;
+    }
+    .categories__button{
+        width: 42%;
+        font-size: 0.6em;
+    }
+}
